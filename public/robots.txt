@@ -1,4 +1,9 @@
 User-agent: *
 Allow: /
 
-Sitemap: /sitemap.xml
+# Content Signals Policy
+User-agent: *
+Content-Signal: search=yes, ai-input=yes, ai-train=no
+Allow: /
+
+Sitemap: https://kamunity-audit.netlify.app/sitemap.xml

@@ -45,4 +45,4 @@ Tool runs 100% client-side. No data collected or stored.
 
 ## Parent Ecosystem
 
-kamunity.org — community sovereignty infrastructure (see /llms-full.txt for full context)
+kamunity.org — community sovereignty infrastructure (see kamunity.org/llms-full.txt for full context)
