@@ -31,7 +31,7 @@ ${cta || `Link in bio for the free Digital Sovereignty Audit \u{1F517}`}
 #DigitalSovereignty #CommunityTech #NFP #NonProfit #DataOwnership #TechForGood #CommunityOrganisation #DigitalTransformation #AIForGood #KamunityConsulting`;
 }
 
-function twitter({ topic, keyMessage, audience, cta }) {
+function twitter({ keyMessage, cta }) {
   const tweet = `${keyMessage}
 
 ${cta || URL}

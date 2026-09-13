@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-export default function ContentCard({ channelId, data, onContentChange }) {
+export default function ContentCard({ data, onContentChange }) {
   const [copied, setCopied] = useState(false);
   const [editing, setEditing] = useState(false);
 
