@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useLocation } from 'react-router-dom';
+import { submitFeedback } from '../utils/submitFeedback';
 
 const reactions = [
   { emoji: '😊', label: 'Love it', value: 'love' },
@@ -13,25 +14,17 @@ export default function FeedbackWidget() {
   const [message, setMessage] = useState('');
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState('');
   const location = useLocation();
 
   async function handleSubmit(e) {
     e.preventDefault();
-    if (!selectedReaction && !message.trim()) return;
+    if (submitting || (!selectedReaction && !message.trim())) return;
 
     setSubmitting(true);
+    setError('');
     try {
-      const formData = new URLSearchParams();
-      formData.append('form-name', 'feedback');
-      formData.append('page', location.pathname);
-      formData.append('reaction', selectedReaction || '');
-      formData.append('message', message.trim());
-
-      await fetch('/', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: formData.toString(),
-      });
+      await submitFeedback({ page: location.pathname, reaction: selectedReaction, message });
 
       setSubmitted(true);
       setTimeout(() => {
@@ -41,7 +34,7 @@ export default function FeedbackWidget() {
         setMessage('');
       }, 2500);
     } catch {
-      setSubmitted(true);
+      setError('Could not confirm delivery. Your feedback is still here; please try again.');
     } finally {
       setSubmitting(false);
     }
@@ -82,6 +75,7 @@ export default function FeedbackWidget() {
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="px-4 pb-4">
+              {error && <p role="alert" className="text-sm text-red-700 mb-3">{error}</p>}
               {/* Emoji reactions */}
               <div className="flex gap-2 mb-3">
                 {reactions.map((r) => (
