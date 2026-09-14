@@ -4,58 +4,9 @@ import { calculateScores, getStatusLabel, getColorClasses } from '../utils/scori
 import { dimensionRecommendations, sensitiveDataWarning, overallStages } from '../data/recommendations';
 import { guides } from '../data/toolkit';
 import { loadAuditResults, getGuideCompletionStats, loadAuditHistory } from '../utils/auditStorage';
-import { industryBenchmarks, getPercentileLabel, getPercentileEstimate } from '../data/benchmarks';
 import { generatePDFReport } from '../utils/pdfReport';
 import ShareResults from './ShareResults';
 import ContactModal from './ContactModal';
-
-function BenchmarkComparison({ results }) {
-  const overallPct = getPercentileEstimate(results.totalScore, industryBenchmarks.overall);
-  const overallLabel = getPercentileLabel(results.totalScore, industryBenchmarks.overall);
-
-  return (
-    <div className="bg-white border border-gray-200 rounded-xl overflow-hidden mb-10 print:break-inside-avoid">
-      <div className="px-6 py-4 bg-gray-50 border-b border-gray-200">
-        <h2 className="text-lg font-bold text-ku-navy">How You Compare</h2>
-        <p className="text-xs text-gray-500 mt-0.5">Compared to Australian community organisations</p>
-      </div>
-      <div className="px-6 py-5">
-        {/* Overall */}
-        <div className="flex items-center gap-4 mb-6 pb-5 border-b border-gray-100">
-          <div className={`px-3 py-1.5 rounded-lg ${overallLabel.bg}`}>
-            <span className={`text-sm font-bold ${overallLabel.color}`}>{overallLabel.label}</span>
-          </div>
-          <p className="text-sm text-gray-600">
-            Your score of <strong className="text-ku-navy">{results.totalScore}</strong> is in the{' '}
-            <strong>{overallPct}th percentile</strong>. The average is {industryBenchmarks.overall.mean}/100.
-          </p>
-        </div>
-
-        {/* Per-dimension */}
-        <div className="space-y-3">
-          {Object.entries(results.dimensions).map(([dimId, dim]) => {
-            const bench = industryBenchmarks.dimensions[dimId];
-            if (!bench) return null;
-            const diff = dim.score - bench.mean;
-            const isAbove = diff > 0;
-            return (
-              <div key={dimId} className="flex items-center justify-between gap-3 text-sm">
-                <span className="text-gray-700 font-medium min-w-0">{dim.name}</span>
-                <div className="flex items-center gap-3 shrink-0">
-                  <span className="text-gray-500 text-xs">avg {bench.mean}</span>
-                  <span className="font-bold text-ku-navy w-8 text-right">{dim.score}</span>
-                  <span className={`text-xs font-semibold w-16 text-right ${isAbove ? 'text-green-600' : diff < 0 ? 'text-red-500' : 'text-gray-400'}`}>
-                    {diff > 0 ? `+${diff}` : diff === 0 ? '—' : diff}
-                  </span>
-                </div>
-              </div>
-            );
-          })}
-        </div>
-      </div>
-    </div>
-  );
-}
 
 function AuditHistory({ currentScore, currentDimensions }) {
   const history = loadAuditHistory();
@@ -301,8 +252,7 @@ export default function Results({ answers }) {
         })}
       </div>
 
-      {/* How You Compare — Benchmarks */}
-      <BenchmarkComparison results={results} />
+      <p className="text-sm text-gray-500 mb-10">These scores reflect your answers, not a comparison with other organisations.</p>
 
       {/* Audit History */}
       <AuditHistory currentScore={results.totalScore} currentDimensions={results.dimensions} />

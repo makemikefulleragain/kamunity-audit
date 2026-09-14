@@ -1,16 +1,11 @@
-import { getStatusLabel } from './scoring';
-import { industryBenchmarks, getPercentileLabel, getPercentileEstimate } from '../data/benchmarks';
+import { getStatusLabel } from './scoring.js';
 
 // Generate a board-ready PDF report from audit results using browser print
 export function generatePDFReport(results, stage) {
   const dims = results.dimensions;
-  const overallPercentile = getPercentileEstimate(results.totalScore, industryBenchmarks.overall);
-  const overallLabel = getPercentileLabel(results.totalScore, industryBenchmarks.overall);
   const date = new Date().toLocaleDateString('en-AU', { year: 'numeric', month: 'long', day: 'numeric' });
 
-  const dimRows = Object.entries(dims).map(([dimId, dim]) => {
-    const bench = industryBenchmarks.dimensions[dimId];
-    const pLabel = getPercentileLabel(dim.score, bench);
+  const dimRows = Object.values(dims).map((dim) => {
     const colorMap = { red: '#ef4444', amber: '#f59e0b', lightGreen: '#10b981', green: '#16a34a' };
     const barColor = colorMap[dim.color] || '#6b7280';
     const pct = Math.round((dim.score / dim.maxScore) * 100);
@@ -26,8 +21,6 @@ export function generatePDFReport(results, stage) {
           </div>
         </td>
         <td style="padding:10px 12px;text-align:center;color:${barColor};font-weight:600">${getStatusLabel(dim.status)}</td>
-        <td style="padding:10px 12px;text-align:center;color:#6b7280">${bench.mean}</td>
-        <td style="padding:10px 12px;text-align:center;font-weight:600;color:${pLabel.color === 'text-green-700' ? '#15803d' : pLabel.color === 'text-emerald-700' ? '#047857' : pLabel.color === 'text-amber-700' ? '#b45309' : '#b91c1c'}">${pLabel.label}</td>
       </tr>`;
   }).join('');
 
@@ -61,15 +54,7 @@ export function generatePDFReport(results, stage) {
     <p style="max-width:500px;margin:8px auto 0;font-size:13px;color:#6b7280">${stage.summary}</p>
   </div>
 
-  <div class="section">
-    <h2>How You Compare</h2>
-    <p style="font-size:13px;color:#6b7280;margin-bottom:12px">
-      Your overall score of <strong>${results.totalScore}</strong> places you in the 
-      <strong>${overallLabel.label}</strong> range (estimated ${overallPercentile}th percentile) 
-      compared to Australian community organisations.
-      The average score is ${industryBenchmarks.overall.mean}/100.
-    </p>
-  </div>
+  <p>These scores reflect your answers, not a comparison with other organisations.</p>
 
   <div class="section">
     <h2>Dimension Breakdown</h2>
@@ -79,8 +64,6 @@ export function generatePDFReport(results, stage) {
           <th>Dimension</th>
           <th style="text-align:center">Score</th>
           <th style="text-align:center">Status</th>
-          <th style="text-align:center">Avg</th>
-          <th style="text-align:center">vs Peers</th>
         </tr>
       </thead>
       <tbody>${dimRows}</tbody>
@@ -97,8 +80,8 @@ export function generatePDFReport(results, stage) {
     <p style="font-size:12px;color:#6b7280">
       This report was generated from the Kamunity Digital Sovereignty Audit, a free self-assessment 
       tool for Australian community organisations. The audit evaluates four dimensions: Data Ownership, 
-      Vendor Lock-in, Cost Transparency, and AI Readiness. Benchmark data is based on aggregated 
-      patterns from community organisation assessments. All data was processed in-browser; no 
+      Vendor Lock-in, Cost Transparency, and AI Readiness. Scores are a starting point for reflection,
+      not validated peer rankings. All data was processed in-browser; no
       information was sent to any server.
     </p>
   </div>

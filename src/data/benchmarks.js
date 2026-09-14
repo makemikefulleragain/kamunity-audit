@@ -1,5 +1,6 @@
-// Industry benchmark data for Australian community organisations
-// Based on aggregated patterns from digital sovereignty assessments
+// Historical, unverified sample values. NOT an active or validated benchmark.
+// Removed from results and printable reports by owner decision 2026-09-14.
+// Retained for provenance only; do not reconnect without supporting evidence.
 
 export const industryBenchmarks = {
   overall: {
