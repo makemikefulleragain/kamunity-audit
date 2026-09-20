@@ -132,7 +132,7 @@ export default function Toolkit() {
       )}
 
       <div className="text-center text-xs text-gray-400">
-        <p>No data collected. No tracking. Everything stays on your device.</p>
+        <p>Your toolkit entries stay on this device. No analytics or tracking.</p>
       </div>
     </div>
   );

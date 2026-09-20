@@ -161,9 +161,9 @@ export default function Layout({ children }) {
               <p className="font-semibold text-white/90 text-sm mb-3">Privacy</p>
               <p className="flex items-center gap-1.5 text-sm text-white/60">
                 <span className="inline-block w-2 h-2 bg-green-400 rounded-full"></span>
-                No data collected
+                Audit data stays local
               </p>
-              <p className="text-xs text-white/40 mt-2 leading-relaxed">No tracking. No cookies. Everything stays on your device.</p>
+              <p className="text-xs text-white/40 mt-2 leading-relaxed">No analytics or tracking. Optional feedback is sent only when you submit it.</p>
             </div>
           </div>
           <div className="border-t border-white/10 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3">

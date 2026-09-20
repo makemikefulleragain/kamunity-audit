@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { submitFeedback } from '../utils/submitFeedback';
 
 const reactions = [
@@ -113,7 +113,11 @@ export default function FeedbackWidget() {
               </button>
 
               <p className="text-[10px] text-gray-400 text-center mt-2 leading-relaxed">
-                Submitted via Netlify Forms. We see your feedback but not your identity.
+                Submitting sends this page, your reaction, and your message to us via Netlify Forms.
+                Don&apos;t include personal or sensitive information.{' '}
+                <Link to="/privacy" className="text-ku-teal hover:text-ku-teal-dark no-underline">
+                  Privacy details
+                </Link>
               </p>
             </form>
           )}

@@ -13,7 +13,7 @@ const faqItems = [
   },
   {
     q: 'Is my data safe?',
-    a: 'Yes. The audit runs entirely in your web browser. Your answers are never sent to any server. We have no database, no user accounts, no analytics, and no tracking. When you close the tab, your data is gone. We practice what we preach about digital sovereignty.',
+    a: 'Yes. The audit and toolkit run in your web browser. Your answers and results are never sent to any server. We have no user accounts, analytics, or tracking. If you deliberately submit the separate feedback form, only the current page, selected reaction, and message are sent to us through Netlify Forms.',
   },
   {
     q: 'How long does the audit take?',

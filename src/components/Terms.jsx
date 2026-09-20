@@ -27,7 +27,8 @@ export default function Terms() {
           <p className="text-sm text-gray-700 leading-relaxed">
             The Tool is provided free of charge. You may use it for your own organisation's
             assessment purposes without restriction. You do not need to create an account,
-            provide an email address, or share any personal information to use any feature.
+            provide an email address, or share personal information to use the audit or toolkit.
+            The separate optional feedback form is described below and in the Privacy Policy.
           </p>
         </section>
 
@@ -52,7 +53,7 @@ export default function Terms() {
                 <li>• Replace a professional IT audit or security assessment</li>
                 <li>• Guarantee the accuracy or completeness of any recommendation</li>
                 <li>• Guarantee the accuracy of nonprofit discount information (verify directly with vendors)</li>
-                <li>• Store your data on any server or cloud service</li>
+                <li>• Store your audit answers, scores, toolkit entries, or results on any server or cloud service</li>
                 <li>• Provide any warranty about the suitability of suggested tools or alternatives</li>
               </ul>
             </div>
@@ -69,6 +70,12 @@ export default function Terms() {
               Privacy Policy
             </Link>{' '}
             for full details.
+          </p>
+          <p className="text-sm text-gray-700 leading-relaxed mb-3">
+            If you choose to submit the separate feedback form, the current page, selected
+            reaction, and message are sent to Kamunity Consulting through Netlify Forms. Do not
+            include personal, confidential, client, or sensitive information. Feedback is not
+            combined with your locally stored audit or toolkit data.
           </p>
           <p className="text-sm text-gray-700 leading-relaxed">
             <strong>Important:</strong> Because data is stored only in your browser, it can be

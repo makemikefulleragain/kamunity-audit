@@ -1,10 +1,19 @@
 # STATE.md — The Kamunity AI Audit
 
-**Last updated:** 2026-02-17 (Phase 9 complete)
-**Current phase:** Phase 9 COMPLETE. DEPLOYED.
+**Last updated:** 2026-09-20 (local release candidate verified)
+**Current phase:** Phase 9 history preserved; controlled safety release pending approval.
 **Deployed URL:** https://kamunity-audit.netlify.app
 **Netlify Project ID:** 4081ed22-1e05-4dd5-a974-906007216393
 **Stack:** React 19 + Tailwind CSS v4 + Vite 7.3.1 + React Router DOM
+
+## Current Operational Checkpoint — 20 September 2026
+
+- The published Netlify deployment is still `69ad6eb2c113ae00086b9267` from remote commit `8d7f620`; it predates the reviewed local safety work.
+- The local content generator endpoint returns 410 without reading credentials, consuming a request body or calling a provider; `/admin` redirects to `/audit`.
+- Unsupported peer/industry comparisons are removed. Results remain personal reflection and guidance, not validated peer rankings.
+- Optional feedback sends only page path, reaction and message when the user submits it. Delivery failures are not shown as success, and Privacy Policy v2.1 discloses the transmission before submission.
+- Verification: 38 tests, lint, production build and dependency audit pass. Desktop/mobile browser checks confirm disclosure, policy navigation, zero console errors and no unintended feedback request.
+- Production publication, remote credential removal and Netlify form-retention verification remain separate approval/environment gates.
 
 ---
 
@@ -185,12 +194,11 @@
 
 ---
 
-## Known Gaps
+## Current Known Gaps
 
-- Admin password default is "admin" (user needs to set VITE_ADMIN_HASH env var)
-- AI generation needs OPENAI_API_KEY in Netlify env vars (templates work without it)
-- No Calendly/booking integration (deferred)
-- No content persistence beyond localStorage (Supabase deferred)
-- No direct social media publishing (copy-to-clipboard only)
-- Mobile sidebar floating button may overlap FeedbackWidget
-- Sidebar collapsed by default (users need to discover it)
+- The reviewed local safety release has not been pushed or deployed; the older hosted function may remain callable.
+- Live Netlify form delivery, retention settings and access controls have not been verified with a real submission.
+- The current published deployment has not yet been accepted as a known-good rollback; its ID is preserved for review.
+- Provider credentials, if present in the Netlify scope, have not been removed because remote configuration changes require separate approval and dependency confirmation.
+- No automated protected-branch release gate is established on GitHub.
+- Calendly/booking, direct publishing and optional future integrations remain deferred product choices, not release blockers.

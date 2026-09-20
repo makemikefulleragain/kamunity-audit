@@ -39,8 +39,8 @@ export default function ContactModal({ onClose }) {
             <span className="font-medium text-ku-navy">mike@kamunityconsulting.com</span>.
           </p>
           <p>
-            We don't collect or store any data from this site. Your email stays between you and us.
-            It's your choice to send it.
+            This site does not send the message. Your email app handles it, and it is your choice
+            to send it. The site's separate optional feedback form is covered by our Privacy Policy.
           </p>
         </div>
 

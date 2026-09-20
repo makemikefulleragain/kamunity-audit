@@ -1,23 +1,31 @@
 # HUMAN ACTION — Sovereignty Audit
 ## Actions Required from Mike
 
-*Last updated: Mar 2, 2026*
+*Last updated: 20 September 2026*
 
 ---
 
-## Immediate (unblocks Phase 2)
+## Immediate release decision
 
-### 1. Add llms.txt to site root
-**What:** Create `public/llms.txt` with one-liner about the tool.
-**Why:** Constitution Principle 11 — every Kamunity site must have llms.txt.
-**Effort:** 5 minutes — Cascade can draft and deploy.
+### 1. Approve or defer the controlled Netlify release
+
+The local release candidate disables the unsafe content generator, removes unsupported peer comparisons, reports feedback delivery failures honestly, and discloses optional feedback accurately. Local tests, lint, build, dependency audit and browser checks pass. The current Netlify deployment predates these fixes.
+
+Before publication, review the exact release commit and clean manifest, confirm the existing deployment as the rollback candidate, then explicitly approve or defer the production deployment. Deployment is not implied by approval of the content changes.
+
+## Completed
+
+- `public/llms.txt` exists and accurately distinguishes local audit/toolkit data from optional feedback.
+- The public assessment remains available; `/admin` and paid generation are disabled locally.
+- Unsupported peer comparisons have been removed locally.
+- Optional feedback is retained with accurate pre-submit and policy disclosure.
 
 ---
 
 ## When Ready
 
-### 2. Decide: standalone vs redirect post-Ring Two launch
-**What:** After Ring Two (kamunity.org) goes live, decide whether the standalone audit at `kamunity-audit.netlify.app` should:
+### 2. Decide: standalone vs redirect after MPA launch
+**What:** After the MPA replaces the existing `kamunity.org` site, decide whether the standalone audit at `kamunity-audit.netlify.app` should:
 - Remain as full weighted audit (different from lighter Ring Two embedded version) — **recommended**
 - Redirect to Ring Two embedded version
 **Why:** Both currently exist. The two-version strategy (standalone = full, Ring Two = diagnostic) is confirmed correct but needs a clear user journey between them.
