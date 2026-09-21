@@ -6,6 +6,6 @@ Values-led governance and digital-sovereignty assessment, one of the four select
 
 Canonical repository: https://github.com/makemikefulleragain/kamunity-audit .
 
-Current gate: Local release candidate verified on 20 September 2026. Thirty-eight tests, lint, production build and dependency audit pass; browser checks cover desktop/mobile privacy disclosure. Prepare the exact clean release manifest and obtain explicit approval before pushing or deploying. The current live Netlify deployment predates the generator disablement, comparison removal and feedback/privacy fixes.
+Current gate: Local release candidate verified on 20 September 2026, with a clean release manifest and deterministic GitHub CI candidate prepared. Thirty-eight tests, lint, production build and dependency audit pass; browser checks cover desktop/mobile privacy disclosure. The Git-linked live deployment predates the generator disablement, comparison removal and feedback/privacy fixes; pushing `main` may automatically publish, so use a reviewed release branch and obtain explicit production approval before merge.
 
 Authoritative portfolio register: `portfolio-audit/PHASE_1_CANONICAL_PORTFOLIO_REGISTER_2026-09-12.md` in the enclosing Dev_Code workspace. This notice records portfolio intent; it does not certify release readiness or authorise a deployment.
