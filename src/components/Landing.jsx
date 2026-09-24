@@ -72,7 +72,7 @@ export default function Landing() {
                 <svg className="w-4 h-4 text-green-500" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                 </svg>
-                No sign-up required. No data leaves your device.
+                No sign-up required. Your audit answers stay on your device.
               </div>
             </div>
           </div>
@@ -215,8 +215,8 @@ export default function Landing() {
             <div>
               <h3 className="font-semibold text-ku-navy mb-1">Your data stays yours</h3>
               <p className="text-gray-600 text-sm leading-relaxed">
-                This tool runs entirely in your browser. Your answers are never transmitted to any server.
-                No accounts, no cookies, no analytics, no tracking. We practice what we preach about digital sovereignty.
+                The audit and toolkit run in your browser. Your answers are never transmitted to any server.
+                No accounts, analytics, or tracking. Optional feedback is sent only if you submit it.
               </p>
             </div>
           </div>

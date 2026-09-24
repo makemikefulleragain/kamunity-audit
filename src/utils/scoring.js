@@ -1,4 +1,4 @@
-import { DIMENSIONS } from '../data/questions';
+import { DIMENSIONS } from '../data/questions.js';
 
 export function calculateScores(answers) {
   const dimensionScores = {};

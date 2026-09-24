@@ -8,7 +8,7 @@ export default function Privacy() {
           Legal
         </p>
         <h1 className="text-3xl font-bold text-ku-navy mb-4">Privacy Policy</h1>
-        <p className="text-gray-500 text-sm">Version 2.0 &mdash; Last updated: February 2026</p>
+        <p className="text-gray-500 text-sm">Version 2.1 &mdash; Last updated: September 2026</p>
       </div>
 
       <div className="space-y-8">
@@ -16,11 +16,13 @@ export default function Privacy() {
           <h2 className="font-bold text-ku-navy text-lg mb-2">The Short Version</h2>
           <div className="bg-green-50 border border-green-200 rounded-xl p-5">
             <p className="text-green-800 font-medium text-sm leading-relaxed">
-              We don't collect your personal information. The Kamunity AI Audit runs entirely
-              in your web browser. Your answers, scores, toolkit progress, and any data you
-              enter into the interactive tools are stored <strong>only in your browser's
-              localStorage</strong> on your device. Nothing is sent to our servers. We have no
-              analytics, no cookies, no tracking, and no third-party scripts that collect data.
+              The core Kamunity AI Audit and toolkit run entirely in your web browser. Your
+              answers, scores, toolkit progress, and data entered into the interactive tools
+              are stored <strong>only in your browser's localStorage</strong> on your device.
+              We have no analytics, advertising cookies, or tracking scripts. If you choose to
+              submit the separate feedback form, the current page, selected reaction, and message
+              are sent to us through Netlify Forms. Audit answers, scores, and toolkit data are
+              not included in that submission.
             </p>
           </div>
         </section>
@@ -29,14 +31,13 @@ export default function Privacy() {
           <h2 className="font-bold text-ku-navy text-lg mb-2">What We Don't Collect</h2>
           <ul className="space-y-2 text-sm text-gray-700">
             {[
-              'We do not collect personal information (names, emails, phone numbers)',
+              'The audit and toolkit do not ask for names, emails, or phone numbers',
               'We do not transmit your audit answers, scores, or results to any server',
               'We do not transmit your toolkit checklist progress, tool inventory data, or cost calculator entries',
               'We do not use cookies or similar tracking technologies',
               'We do not use analytics services (no Google Analytics, no Hotjar, nothing)',
               'We do not load third-party scripts, fonts, or tracking pixels that collect data',
-              'We do not create user accounts or profiles',
-              'We do not share any data with third parties (because we have no data to share)',
+              'We do not create user accounts, profiles, or combine feedback with your audit results',
             ].map((item, i) => (
               <li key={i} className="flex items-start gap-2">
                 <svg className="w-4 h-4 text-green-500 mt-0.5 shrink-0" fill="currentColor" viewBox="0 0 20 20">
@@ -49,11 +50,28 @@ export default function Privacy() {
         </section>
 
         <section>
+          <h2 className="font-bold text-ku-navy text-lg mb-2">Optional Feedback</h2>
+          <p className="text-sm text-gray-700 leading-relaxed mb-3">
+            The feedback control is optional and separate from the audit and toolkit. Nothing is
+            sent merely by opening it. If you press <strong>Send Feedback</strong>, we transmit
+            the current page path, your selected reaction (if any), and the message you entered
+            to Netlify Forms so the submission is available to Kamunity Consulting. Do not include
+            personal, confidential, client, or other sensitive information.
+          </p>
+          <p className="text-sm text-gray-700 leading-relaxed">
+            The feedback submission does not contain your audit answers, scores, toolkit entries,
+            or locally stored results. Netlify processes the submission and associated request
+            metadata under its privacy policy. If delivery cannot be confirmed, the form reports
+            the failure and keeps your draft in the open form so you can retry.
+          </p>
+        </section>
+
+        <section>
           <h2 className="font-bold text-ku-navy text-lg mb-2">Data Stored on Your Device</h2>
           <p className="text-sm text-gray-700 leading-relaxed mb-3">
             This tool uses your browser's <strong>localStorage</strong> to save your progress
-            so you can return to it later. This data never leaves your device. Specifically,
-            we store:
+            so you can return to it later. This audit and toolkit data never leaves your device.
+            Specifically, we store:
           </p>
           <ul className="space-y-2 text-sm text-gray-700">
             {[
@@ -93,8 +111,9 @@ export default function Privacy() {
             the entire application is downloaded to your browser. All processing, including
             your answers, score calculation, recommendation generation, checklist management,
             tool inventory tracking, and cost calculations, happens locally on your device.
-            No data is transmitted to our servers or any third party at any point during
-            normal use of the audit and toolkit features.
+            Audit and toolkit data is not transmitted to our servers or any third party during
+            normal use. The optional feedback submission described above is the only in-site
+            feature that deliberately sends user-entered text to us.
           </p>
         </section>
 
@@ -111,9 +130,9 @@ export default function Privacy() {
         <section>
           <h2 className="font-bold text-ku-navy text-lg mb-2">Hosting</h2>
           <p className="text-sm text-gray-700 leading-relaxed">
-            This site is hosted on Netlify. Netlify may collect standard web server logs
-            (IP addresses, browser type, pages requested) as part of their hosting service.
-            This is standard for all websites and is covered by{' '}
+            This site is hosted on Netlify. Netlify may process standard web server logs
+            (such as IP address, browser type, and pages requested) and processes optional
+            feedback submissions through Netlify Forms. This is covered by{' '}
             <a
               href="https://www.netlify.com/privacy/"
               target="_blank"
@@ -122,7 +141,8 @@ export default function Privacy() {
             >
               Netlify's Privacy Policy
             </a>
-            . We do not access or use these logs.
+            . Kamunity Consulting can access submitted feedback through the service but does not
+            receive your audit answers, scores, or toolkit data.
           </p>
         </section>
 
@@ -141,8 +161,9 @@ export default function Privacy() {
           <h2 className="font-bold text-ku-navy text-lg mb-2">Your Rights</h2>
           <p className="text-sm text-gray-700 leading-relaxed mb-3">
             Under the Australian Privacy Principles, you have the right to know what personal
-            information an organisation holds about you and how it's used. In our case: we hold
-            none on our servers. All data you enter is stored only on your own device.
+            information an organisation holds about you and how it is used. We do not receive
+            your core audit or toolkit data. Optional feedback you deliberately submit is
+            processed through Netlify Forms and made available to Kamunity Consulting.
           </p>
           <p className="text-sm text-gray-700 leading-relaxed">
             For more information about your privacy rights, visit the{' '}
@@ -161,14 +182,14 @@ export default function Privacy() {
         <section>
           <h2 className="font-bold text-ku-navy text-lg mb-2">Changes to This Policy</h2>
           <p className="text-sm text-gray-700 leading-relaxed mb-3">
-            If we change how this tool handles data (for example, if we add optional features
-            that require server-side data storage), we will update this policy and clearly
-            communicate what changed. Our commitment to running the core audit and toolkit
-            client-side with zero server-side data collection is a fundamental design principle.
+            If we change how this tool handles data, we will update this policy and clearly
+            communicate what changed. Running the core audit and toolkit client-side, without
+            transmitting their answers or results, remains a fundamental design principle.
           </p>
           <div className="bg-gray-50 border border-gray-200 rounded-lg p-4">
             <h3 className="font-semibold text-ku-navy text-sm mb-2">Version History</h3>
             <ul className="space-y-1 text-xs text-gray-600">
+              <li><strong>v2.1 (Sep 2026)</strong> &mdash; Added accurate disclosure of the optional Netlify Forms feedback submission and distinguished it from locally stored audit and toolkit data.</li>
               <li><strong>v2.0 (Feb 2026)</strong> &mdash; Updated to reflect localStorage persistence for audit results, toolkit guide progress, tool inventory, and cost calculator. Added sections on downloadable templates and device-stored data. Clarified that no data leaves the user's device.</li>
               <li><strong>v1.0 (Feb 2026)</strong> &mdash; Initial privacy policy. Covered zero-collection static audit, external links, hosting, and consulting services.</li>
             </ul>

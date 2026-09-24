@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import Layout from './components/Layout';
 import Landing from './components/Landing';
 import Quiz from './components/Quiz';
@@ -15,8 +15,6 @@ import Privacy from './components/Privacy';
 import Terms from './components/Terms';
 import FAQ from './components/FAQ';
 import Insights from './components/Insights';
-import AdminGate from './components/AdminGate';
-import ContentGenerator from './components/ContentGenerator';
 
 function App() {
   const [answers, setAnswers] = useState({});
@@ -38,7 +36,7 @@ function App() {
         <Route path="/terms" element={<Terms />} />
         <Route path="/faq" element={<FAQ />} />
         <Route path="/insights" element={<Insights />} />
-        <Route path="/admin" element={<AdminGate><ContentGenerator /></AdminGate>} />
+        <Route path="/admin" element={<Navigate to="/audit" replace />} />
       </Routes>
     </Layout>
   );

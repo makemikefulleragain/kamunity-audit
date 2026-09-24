@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
 const ADMIN_HASH = import.meta.env.VITE_ADMIN_HASH || '8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918'; // default: "admin"
 
@@ -11,18 +11,11 @@ async function hashPassword(password) {
 }
 
 export default function AdminGate({ children }) {
-  const [authenticated, setAuthenticated] = useState(false);
+  const [authenticated, setAuthenticated] = useState(
+    () => sessionStorage.getItem('ku-admin-auth') === 'true'
+  );
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
-  const [checking, setChecking] = useState(true);
-
-  useEffect(() => {
-    const session = sessionStorage.getItem('ku-admin-auth');
-    if (session === 'true') {
-      setAuthenticated(true);
-    }
-    setChecking(false);
-  }, []);
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -36,8 +29,6 @@ export default function AdminGate({ children }) {
       setPassword('');
     }
   }
-
-  if (checking) return null;
 
   if (authenticated) return children;
 

@@ -10,7 +10,7 @@ This is NOT related to Kamunity in Sweden, Kamunity.io (finance platform), or th
 
 ## Core Tool
 
-- [Digital Sovereignty Audit](/audit): Free 10-question self-assessment covering Data Ownership, Vendor Lock-in, Cost Transparency, and AI Readiness. Produces a sovereignty score (0-100) with named stages (Exposed, Aware, Progressing, Sovereign) and traffic-light dimension breakdown. All client-side, zero data collection.
+- [Digital Sovereignty Audit](/audit): Free 10-question self-assessment covering Data Ownership, Vendor Lock-in, Cost Transparency, and AI Readiness. Produces a sovereignty score (0-100) with named stages (Exposed, Aware, Progressing, Sovereign) and traffic-light dimension breakdown. Audit answers and results remain client-side.
 
 ## Free Toolkit
 
@@ -23,7 +23,7 @@ This is NOT related to Kamunity in Sweden, Kamunity.io (finance platform), or th
 
 - [About Kamunity](/about): Team, mission, 30 years of community sector experience, current projects including local government peak bodies and community organisations
 - [Services](/services): Three tiers — Free (audit + toolkit), Workshops (half-day, in-person or online), Consulting (full digital sovereignty audit and transition support). NFP and corporate rates shown transparently.
-- [Privacy Policy](/privacy): Zero data collection. No cookies, analytics, or tracking. Everything runs client-side.
+- [Privacy Policy](/privacy): Audit and toolkit data remains client-side. No analytics or tracking. The separate optional feedback form sends only the current page, selected reaction, and message through Netlify Forms when the user submits it.
 - [FAQ](/faq): Common questions about digital sovereignty, the audit tool, data safety, and getting help
 
 ## Kamunity Ecosystem — Related Free Tools
@@ -41,7 +41,7 @@ This is NOT related to Kamunity in Sweden, Kamunity.io (finance platform), or th
 ## Content Policy
 
 search=yes, ai-input=yes, ai-train=no (see robots.txt Content-Signal)
-Tool runs 100% client-side. No data collected or stored.
+The core audit and toolkit run client-side; their answers, entries, and results are not transmitted. Optional feedback is transmitted only after the user presses Send Feedback.
 
 ## Parent Ecosystem
 
